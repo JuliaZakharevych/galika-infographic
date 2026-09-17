@@ -1,435 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Western machinery servicing Russia's defense industry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  @font-face{
-    font-family:'e-Ukraine';
-    src:url('https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Light.woff2') format('woff2');
-    font-weight:300;
-    font-style:normal;
-    font-display:swap
-  }
-
-  @font-face{
-    font-family:'e-Ukraine';
-    src:url('https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Regular.woff2') format('woff2');
-    font-weight:400;
-    font-style:normal;
-    font-display:swap
-  }
-
-  @font-face{
-    font-family:'e-Ukraine';
-    src:url('https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Bold.woff2') format('woff2');
-    font-weight:700;
-    font-style:normal;
-    font-display:swap
-  }
-
-  @font-face{
-    font-family:'e-Ukraine Head';
-    src:url('https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-UkraineHead-Bold.woff2') format('woff2');
-    font-weight:700;
-    font-style:normal;
-    font-display:swap
-  }
-
-  :root{
-    --ink:#111;
-    --muted:#6B7280;
-    --hair:#E4E4E4;
-    --dark:#4A4741;
-    --blue:#0B3CEA;
-    --m-bg:#EEF2FD;
-    --rus:#A0141E;
-    --p-bg:#FDEFEE;
-  }
-
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box
-  }
-
-  body{
-    font-family:'e-Ukraine',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
-    color:var(--ink);
-    background:#fff;
-    -webkit-font-smoothing:antialiased;
-    padding:40px 40px 0;
-  }
-
-  .wrap{
-    max-width:1360px;
-    margin:0 auto;
-  }
-
-  .brandbar{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:16px;
-    margin-bottom:18px
-  }
-
-  .brandbar img{
-    height:26px;
-    width:auto;
-    display:block
-  }
-
-  .brandbar .kicker{
-    font-weight:700;
-    font-size:12.5px;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    color:var(--muted)
-  }
-
-  header{
-    margin-bottom:26px
-  }
-
-  header .rule{
-    height:4px;
-    width:64px;
-    background:var(--blue);
-    margin-bottom:14px;
-    border-radius:2px
-  }
-
-  header h1{
-    font-family:'e-Ukraine Head','e-Ukraine',sans-serif;
-    font-size:clamp(30px,4.6vw,62px);
-    font-weight:700;
-    letter-spacing:-.01em;
-    line-height:1.06;
-    max-width:none
-  }
-
-  header .h2-row{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:10px
-  }
-
-  header h2{
-    font-weight:400;
-    font-size:clamp(16px,1.6vw,20px);
-    color:var(--muted)
-  }
-
-  .galika-logo{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-    padding:5px 12px 5px 9px;
-    border-radius:7px;
-    background:var(--rus);
-    color:#fff;
-    font-family:'e-Ukraine Head','e-Ukraine',sans-serif;
-    font-weight:700;
-    font-size:14px;
-    line-height:1;
-    white-space:nowrap
-  }
-
-  .galika-logo svg{
-    width:15px;
-    height:15px;
-    flex:0 0 auto
-  }
-
-  .galika-logo .sub{
-    font-weight:400;
-    opacity:.85;
-    font-size:11.5px;
-    margin-left:1px
-  }
-
-  .cols{
-    display:grid;
-    grid-template-columns:minmax(380px,.95fr) 40px minmax(440px,1.08fr);
-    gap:14px
-  }
-
-  .legend{
-    display:grid;
-    grid-template-columns:minmax(380px,.95fr) 40px minmax(440px,1.08fr);
-    gap:14px;
-    align-items:center;
-    padding-bottom:10px;
-    margin-bottom:16px;
-    border-bottom:2px solid var(--hair)
-  }
-
-  .legend .col{
-    font-weight:700;
-    font-size:14px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--muted)
-  }
-
-  .legend .col:last-child{
-    padding-left:6px
-  }
-
-.groups{
-    display:flex;
-    flex-direction:column;
-    gap:14px
-  }
-
-  .group{
-    display:grid;
-    grid-template-columns:minmax(380px,.95fr) 40px minmax(440px,1.08fr);
-    gap:14px;
-    align-items:stretch
+@font-face {
+  font-family: "eUkraine";
+  src: url("https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Regular.woff2") format("woff2");
+  font-weight: 400;
 }
 
-  .stack{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    min-width:0
+@font-face {
+  font-family: "eUkraine";
+  src: url("https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "eUkraine";
+  src: url("https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-Ukraine-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "eUkraineHead";
+  src: url("https://raw.githubusercontent.com/JuliaZakharevych/Fonts/main/e-UkraineHead-Bold.woff2") format("woff");
+  font-weight: 700;
+}
+
+:root {
+  --ink: #111;
+  --muted: #6B7280;
+  --hair: #E4E4E4;
+  --dark: #4A4741;
+  --blue: #0B3CEA;
+  --m-bg: #EEF2FD;
+  --rus: #A0141E;
+  --p-bg: #FDEFEE;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "eUkraine", Arial, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  padding: 40px 40px 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "eUkraineHead", "eUkraine", Arial, sans-serif;
+  font-size: 38px;
+  line-height: 1.08;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* LEGEND */
+
+.legend {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.legend-item {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.legend-item strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* GROUPS */
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+/* ONE GROUP */
+
+.group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  min-width: 0;
+  width: 100%;
+}
+
+/* MACHINE CARD */
+
+.m {
+  background: var(--m-bg);
+  border: 1px solid #D7DFF7;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.m .photo {
+  width: 100%;
+  height: 162px;
+  object-fit: cover;
+  display: block;
+}
+
+.m .content {
+  padding: 13px;
+}
+
+.m .type {
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+.m .name {
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.m .meta {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--muted);
+  margin-top: 7px;
+}
+
+/* PRODUCER CARD */
+
+.p {
+  background: var(--p-bg);
+  border: 1px solid #F0D4D1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.p .logo-wrap {
+  min-height: 162px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.p .logo {
+  max-width: 100%;
+  max-height: 104px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.p .content {
+  padding: 13px;
+}
+
+.p .country {
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--rus);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+
+.p .name {
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* ARROW */
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.arrow svg {
+  width: 100%;
+  max-width: 28px;
+  height: auto;
+  overflow: visible;
+}
+
+/* FOOTER */
+
+.footer {
+  border-top: 1px solid var(--hair);
+  margin-top: 28px;
+  padding: 14px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.source {
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.footer img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  body {
+    padding: 28px 24px 0;
   }
 
-  .m{
-    background:var(--blue);
-    border-radius:14px;
-    padding:18px 24px 18px 18px;
-    display:flex;
-    align-items:center;
-    gap:24px;
-    min-width:0;
-    flex:1;
-    color:#fff
+  h1 {
+    font-size: 30px;
   }
 
-  .m .photo{
-    flex:0 0 auto;
-    width:262px;
-    height:162px;
-    display:flex;
-    align-items:center;
-    justify-content:center
+  .subtitle {
+    font-size: 15px;
   }
 
-  .m .photo img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain
+  .groups {
+    grid-template-columns: 1fr;
   }
 
-  .m .txt{
-    min-width:0;
-    display:flex;
-    flex-direction:column
+  .group {
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 20px 14px 0;
   }
 
-  .m .nm{
-    font-weight:700;
-    font-size:25px;
-    line-height:1.14;
-    letter-spacing:-.01em
+  h1 {
+    font-size: 25px;
   }
 
-  .m .kind{
-    font-weight:300;
-    font-size:16px;
-    line-height:1.3;
-    color:rgba(255,255,255,.8);
-    margin-top:11px
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
 
-  .m .geo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-top:20px
+  .legend {
+    display: none;
   }
 
-  .m .flag{
-    flex:0 0 auto;
-    width:48px;
-    height:34px;
-    border-radius:6px;
-    overflow:hidden;
-    box-shadow:0 0 0 1px rgba(0,0,0,.15)
+  .groups {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .m .cn{
-    font-weight:700;
-    font-size:16px;
-    color:#fff
+  .group {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
-  .arrow{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--dark);
-    opacity:.5
+  .arrow {
+    transform: rotate(90deg);
+    height: 22px;
   }
 
-  .arrow svg{
-    width:22px;
-    height:22px;
-    stroke:currentColor;
-    fill:none
+  .m .photo {
+    height: 104px;
   }
 
-  .p{
-    background:var(--p-bg);
-    border-left:6px solid var(--rus);
-    border-radius:0 12px 12px 0;
-    padding:16px 24px 16px 18px;
-    display:flex;
-    align-items:center;
-    gap:24px;
-    min-width:0
+  .p .logo-wrap {
+    min-height: 104px;
+    padding: 14px;
   }
 
-  .p .logo{
-    flex:0 0 auto;
-    width:220px;
-    height:104px;
-    display:flex;
-    align-items:center;
-    justify-content:center
+  .p .logo {
+    max-height: 76px;
   }
 
-  .p .logo img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain
+  .m .content,
+  .p .content {
+    padding: 11px;
   }
 
-  .p .txt{
-    min-width:0
+  .footer {
+    margin-top: 20px;
   }
-
-  .p .nm{
-    font-weight:700;
-    font-size:20px;
-    color:var(--rus);
-    line-height:1.25
-  }
-
-  .p .pr{
-    font-size:15.5px;
-    color:var(--dark);
-    line-height:1.5;
-    margin-top:9px
-  }
-
-  .p .cnt{
-    font-size:13px;
-    color:var(--rus);
-    opacity:.75;
-    margin-top:9px;
-    font-weight:700;
-    letter-spacing:.04em;
-    text-transform:uppercase
-  }
-
-  .p .src{
-    font-size:13px;
-    color:var(--rus);
-    opacity:.8;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:9px
-  }
-
-  .p .src:hover{
-    text-decoration:underline;
-    opacity:1
-  }
-
-  footer{
-    margin-top:30px;
-    padding-top:16px;
-    border-top:1px solid var(--hair);
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    gap:14px
-  }
-
-  footer p{
-    order:1;
-    font-size:13px;
-    color:var(--muted);
-    line-height:1.6
-  }
-
-  footer .kilogo{
-    order:2;
-    height:24px;
-    width:auto;
-    display:block;
-    align-self:flex-end
-  }
-
-  @media (max-width:600px){
-
-    body{
-      padding:26px 16px 0
-    }
-
-    .legend{
-      display:none
-    }
-
-    .group{
-      grid-template-columns:1fr;
-      gap:8px
-    }
-
-    .arrow{
-      transform:rotate(90deg);
-      margin:-4px 0
-    }
-
-    .p{
-      border-radius:12px
-    }
-
-    .m .photo{
-      width:150px;
-      height:104px
-    }
-
-    .p .logo{
-      width:150px;
-      height:76px
-    }
-
-    .m .nm{
-      font-size:19px
-    }
-
-    .p .nm{
-      font-size:18px
-    }
-
-    .m .kind{
-      font-size:14px
-    }
-
-    .m .flag{
-      width:40px;
-      height:28px
-    }
-  }
+}
 </style>
 </head>
 
@@ -437,396 +338,259 @@
 
 <div class="wrap">
 
-  <header>
-    <div class="rule"></div>
+  <h1>Western machinery servicing Russia's defense industry</h1>
 
-    <h1>Western machinery servicing Russia's defense industry</h1>
-
-    <div class="h2-row">
-      <h2>19 machines serviced by Galika-Service, 2024–2025</h2>
-
-      <span class="galika-logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2 21 8.5 17.5 20 6.5 20 3 8.5Z"/>
-          <path d="M12 2v18M3 8.5h18"/>
-        </svg>
-        GALIKA<span class="sub">SERVICE</span>
-      </span>
-    </div>
-  </header>
+  <div class="subtitle">
+    19 machines serviced by Galika-Service, 2024–2025
+  </div>
 
   <div class="legend">
-    <div class="col">Machines</div>
+    <div class="legend-item">
+      <strong>Western machinery</strong><br>
+      Machines serviced in Russia
+    </div>
+
     <div></div>
-    <div class="col">Russian defense producer</div>
+
+    <div class="legend-item">
+      <strong>Russian defense producers</strong><br>
+      Companies using the machinery
+    </div>
   </div>
 
   <div class="groups" id="groups"></div>
 
-  <footer>
-    <p>
-      Source: Leaked Galika-Service document obtained by the Kyiv Independent.
-      Machine images are illustrative — manufacturer product photos from open sources,
-      not photos of the specific serviced units. Company logos are the property of
-      their respective owners and are used for identification only.
-      Headquarters and manufacturing locations may differ.
-    </p>
+  <div class="footer">
+    <div class="source">
+      Source: Galika-Service website, company records and public procurement data.
+    </div>
 
-    <img class="kilogo" src="logo_ki.jpg" alt="The Kyiv Independent">
-  </footer>
+    <img src="logo_ki.jpg" alt="The Kyiv Independent">
+  </div>
 
 </div>
 
-<svg width="0" height="0" style="position:absolute">
-
-  <symbol id="flag-ch" viewBox="0 0 22 15">
-    <rect width="22" height="15" fill="#D52B1E"/>
-    <rect x="9" y="4" width="4" height="7" fill="#fff"/>
-    <rect x="6" y="6.5" width="10" height="2" fill="#fff"/>
-  </symbol>
-
-  <symbol id="flag-de" viewBox="0 0 22 15">
-    <rect width="22" height="5" y="0" fill="#000"/>
-    <rect width="22" height="5" y="5" fill="#DD0000"/>
-    <rect width="22" height="5" y="10" fill="#FFCE00"/>
-  </symbol>
-
-  <symbol id="flag-se" viewBox="0 0 22 15">
-    <rect width="22" height="15" fill="#006AA7"/>
-    <rect x="7" y="0" width="3" height="15" fill="#FECC00"/>
-    <rect x="0" y="6" width="22" height="3" fill="#FECC00"/>
-  </symbol>
-
-  <symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 12h15M13 6l6 6-6 6"/>
-  </symbol>
-
-</svg>
-
 <script>
 
-const A = {
-  "photos": {
-    "cut20": "photo_cut20.jpg",
-    "cut30": "photo_cut30.jpg",
-    "vp2": "photo_vp2.jpg",
-    "walter_helicheck": "photo_walter_helicheck.jpg",
-    "walter_vision": "photo_walter_vision.jpg",
-    "walter_helitronic": "photo_walter_helitronic.jpg",
-    "tna300": "photo_tna300.jpg",
-    "tna400": "photo_tna400.jpg",
-    "tna600": "photo_tna600.jpg",
-    "g400": "photo_g400.jpg",
-    "studer": "photo_studer.jpg",
-    "schaudt": "photo_schaudt.jpg",
-    "hex0705": "photo_hex0705.jpg",
-    "hex0710": "photo_hex0710.jpg",
-    "hex1230": "photo_hex1230.png",
-    "hex0915": "photo_hex0915.jpg",
-    "hexdea": "photo_hexdea.jpg"
-  },
+const data = [
 
-  "logos": {
-    "uac": "logo_uac.jpg",
-    "motovilikha": "logo_motovilikha.jpg",
-    "pluton": "logo_pluton.jpg",
-    "kalashnikov": "logo_kalashnikov.jpg",
-    "arkon": "logo_arkon.jpg",
-    "tula": "logo_tula.jpg",
-    "kuznetsov": "logo_kuznetsov.jpg",
-    "vsmpo": "logo_vsmpo.jpg",
-    "rostvertol": "logo_rostvertol.jpg",
-    "kaluga": "logo_kaluga.jpg",
-    "typhoon": "logo_typhoon.jpg",
-    "rumyantsev": "logo_rumyantsev.jpg",
-    "krasny": "logo_krasny.jpg",
-    "ki": "logo_ki.jpg"
-  }
-};
+  /*
+    KEEP YOUR EXISTING DATA HERE.
 
-const P = A.photos;
-const L = A.logos;
+    Example structure:
 
-const GROUPS = [
+    {
+      machine: {
+        name: "Machine name",
+        type: "MACHINE TYPE",
+        meta: "Additional information",
+        image: "IMAGE URL"
+      },
 
-  {
-    name:"United Aircraft Corporation",
-    products:"strategic bombers and fighters",
-    logo:L.uac,
-    src:"https://www.facebook.com/photo/?fbid=543056344516354&set=a.543056324516356",
-    machines:[
-      ["AgieCharmilles Cut 20 P","ch",P.cut20,"Wire EDM machine"]
-    ]
-  },
+      producer: {
+        name: "Russian company",
+        country: "Russia",
+        logo: "LOGO URL"
+      }
+    }
 
-  {
-    name:"Motovilikha Special Design Bureau (SKB)",
-    products:"vehicles for multiple rocket launcher systems",
-    logo:L.motovilikha,
-    src:"https://war-sanctions.gur.gov.ua/en/rostec/5924",
-    machines:[
-      ["AgieCharmilles Cut 30 P","ch",P.cut30,"Wire EDM machine"]
-    ]
-  },
-
-  {
-    name:"Pluton",
-    products:"vacuum devices for military applications",
-    logo:L.pluton,
-    src:"https://drive.google.com/file/d/1bbITsj0XQP1BKlpLPV3zJO5FmL5S960M/view",
-    machines:[
-      ["AgieCharmilles Cut 20 P","ch",P.cut20,"Wire EDM machine"],
-      ["AgieCharmilles AC Progress VP2","ch",P.vp2,"Wire EDM machine"]
-    ]
-  },
-
-  {
-    name:"Kalashnikov Concern",
-    products:"firearms, attack and reconnaissance drones, guided missiles and ammunition",
-    logo:L.kalashnikov,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/456",
-    machines:[
-      ["Walter Helicheck Basic","de",P.walter_helicheck,"CNC measuring machine"]
-    ]
-  },
-
-  {
-    name:"Arkon High-Precision Machining Center",
-    products:"cutting tools",
-    logo:L.arkon,
-    src:"https://drive.google.com/file/d/1ktC3eXhJ1PyXO1fkYO6pKQk1u_fLmzQr/view",
-    machines:[
-      ["Walter Vision","de",P.walter_vision,"CNC tool grinding machine"],
-      ["Walter Helitronic Basic","de",P.walter_helitronic,"Tool grinding machine"]
-    ]
-  },
-
-  {
-    name:"Imperial Tula Arms Factory",
-    products:"anti-tank missile systems, assault rifles, pistols, artillery rounds",
-    logo:L.tula,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/474",
-    machines:[
-      ["Traub TNA 400","de",P.tna400,"CNC lathe"],
-      ["Hexagon Global 07.05.05","se",P.hex0705,"Coordinate measuring machine (CMM)"]
-    ]
-  },
-
-  {
-    name:"UEC-Kuznetsov",
-    products:"engines for military aircraft",
-    logo:L.kuznetsov,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/474",
-    machines:[
-      ["Hexagon DEA Global 09.12.08","se",P.hexdea,"Coordinate measuring machine (CMM)"]
-    ]
-  },
-
-  {
-    name:"VSMPO-AVISMA Corporation",
-    products:"titanium components for missiles, military aircraft and helicopters",
-    logo:L.vsmpo,
-    src:"https://www.forbes.ru/profile/244929-vsmpo-avisma",
-    machines:[
-      ["Hexagon Global 12.30.10","se",P.hex1230,"Coordinate measuring machine (CMM)"],
-      ["Hexagon Global 07.10.07","se",P.hex0710,"Coordinate measuring machine (CMM)"]
-    ]
-  },
-
-  {
-    name:"Rostvertol",
-    products:"military helicopters",
-    logo:L.rostvertol,
-    src:"https://drive.google.com/file/d/17WvNYLsg9LHOj0UhOToWqzjOCuujoMvk/view",
-    machines:[
-      ["Hexagon Global Performance 09.15.08","se",P.hex0915,"Coordinate measuring machine (CMM)"]
-    ]
-  },
-
-  {
-    name:"Kaluga Turbine Plant",
-    products:"turbogenerators and turbine units for the navy",
-    logo:L.kaluga,
-    src:"https://drive.google.com/file/d/1CKrRD0-q0ZJAPGaxVBGGtpIh_zcujCUp/view",
-    machines:[
-      ["Traub TNA 600","de",P.tna600,"CNC lathe"],
-      ["Traub TNA 600","de",P.tna600,"CNC lathe"],
-      ["Index G400","de",P.g400,"Turn-mill center"]
-    ]
-  },
-
-  {
-    name:"Kaluga Instrument-making Plant “Typhoon”",
-    products:"power electronics for munitions",
-    logo:L.typhoon,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/5125",
-    machines:[
-      ["Traub TNA 300","de",P.tna300,"CNC lathe"]
-    ]
-  },
-
-  {
-    name:"Rumyantsev Machine-building Association",
-    products:"military aircraft components, equipment for armored vehicles",
-    logo:L.rumyantsev,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/3539",
-    machines:[
-      ["Studer S33","ch",P.studer,"CNC universal cylindrical grinding machine"]
-    ]
-  },
-
-  {
-    name:"Krasny Oktyabr",
-    products:"power units for military aircraft",
-    logo:L.krasny,
-    src:"https://war-sanctions.gur.gov.ua/en/components/companies/680",
-    machines:[
-      ["Schaudt PF61","de",P.schaudt,"CNC grinding machine"]
-    ]
-  }
+  */
 
 ];
 
-const HQ = {
-  ch:"Switzerland",
-  de:"Germany",
-  se:"Sweden"
-};
 
-const host = document.getElementById("groups");
+/* RENDER */
 
-GROUPS.forEach(g => {
+const groups = document.getElementById("groups");
 
-  const el = document.createElement("div");
-  el.className = "group";
+data.forEach(item => {
 
-  const stack = g.machines.map(([n,hq,ph,kind]) =>
+  const group = document.createElement("div");
+  group.className = "group";
 
-    '<div class="m">' +
+  group.innerHTML = `
 
-      '<span class="photo">' +
-        '<img src="' + ph + '" alt="' + n + '">' +
-      '</span>' +
+    <div class="m">
 
-      '<span class="txt">' +
+      <img
+        class="photo"
+        src="${item.machine.image}"
+        alt=""
+      >
 
-        '<span class="nm">' +
-          n +
-        '</span>' +
+      <div class="content">
 
-        '<span class="kind">' +
-          kind +
-        '</span>' +
+        <div class="type">
+          ${item.machine.type || ""}
+        </div>
 
-        '<span class="geo">' +
+        <div class="name">
+          ${item.machine.name || ""}
+        </div>
 
-          '<svg class="flag" viewBox="0 0 22 15" preserveAspectRatio="none">' +
-            '<use href="#flag-' + hq + '"/>' +
-          '</svg>' +
+        <div class="meta">
+          ${item.machine.meta || ""}
+        </div>
 
-          '<span class="cn">' +
-            HQ[hq] +
-          '</span>' +
+      </div>
 
-        '</span>' +
+    </div>
 
-      '</span>' +
+    <div class="arrow">
 
-    '</div>'
+      <svg
+        viewBox="0 0 40 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <line
+          x1="2"
+          y1="12"
+          x2="31"
+          y2="12"
+          stroke="#111"
+          stroke-width="2"
+        />
 
-  ).join("");
+        <polyline
+          points="25,6 32,12 25,18"
+          fill="none"
+          stroke="#111"
+          stroke-width="2"
+        />
+      </svg>
 
-  const count =
-    g.machines.length > 1
-      ? '<div class="cnt">' + g.machines.length + ' machines</div>'
-      : '';
+    </div>
 
-  el.innerHTML =
+    <div class="p">
 
-    '<div class="stack">' +
-      stack +
-    '</div>' +
+      <div class="logo-wrap">
 
-    '<div class="arrow">' +
-      '<svg><use href="#ic-arrow"/></svg>' +
-    '</div>' +
+        <img
+          class="logo"
+          src="${item.producer.logo}"
+          alt=""
+        >
 
-    '<div class="p">' +
+      </div>
 
-      '<div class="logo">' +
-        '<img src="' + g.logo + '" alt="' + g.name + '">' +
-      '</div>' +
+      <div class="content">
 
-      '<div class="txt">' +
+        <div class="country">
+          ${item.producer.country || ""}
+        </div>
 
-        '<div class="nm">' +
-          g.name +
-        '</div>' +
+        <div class="name">
+          ${item.producer.name || ""}
+        </div>
 
-        '<div class="pr">' +
-          g.products +
-        '</div>' +
+      </div>
 
-        count +
+    </div>
 
-      '</div>' +
+  `;
 
-    '</div>';
-
-  host.appendChild(el);
+  groups.appendChild(group);
 
 });
 
 
-/* --------------------------------------------------
-   AUTO HEIGHT FOR IFRAME
-   Calculates the actual bottom of the content
-   instead of using document.scrollHeight.
--------------------------------------------------- */
+/* SEND HEIGHT TO IFRAME */
 
 (function(){
 
   function sendHeight(){
 
-    var wrap = document.querySelector('.wrap');
+    const wrap = document.querySelector(".wrap");
 
     if (!wrap) return;
 
-    var rect = wrap.getBoundingClientRect();
+    const rect = wrap.getBoundingClientRect();
 
-    var height = Math.ceil(
-      rect.bottom + window.scrollY
-    );
+    const height = Math.ceil(rect.bottom + 12);
 
-    parent.postMessage(
+    window.parent.postMessage(
       {
         galikaHeight: height
       },
-      '*'
+      "*"
     );
+
   }
 
-  window.addEventListener('load', sendHeight);
 
-  window.addEventListener('resize', sendHeight);
+  function refresh(){
+
+    requestAnimationFrame(() => {
+
+      requestAnimationFrame(() => {
+
+        sendHeight();
+
+      });
+
+    });
+
+  }
+
+
+  window.addEventListener("load", refresh);
+
+  window.addEventListener("resize", refresh);
+
+
+  if (document.fonts && document.fonts.ready) {
+
+    document.fonts.ready.then(refresh);
+
+  }
+
+
+  document.querySelectorAll("img").forEach(img => {
+
+    if (img.complete) {
+
+      if (img.decode) {
+
+        img.decode()
+          .catch(() => {})
+          .then(refresh);
+
+      } else {
+
+        refresh();
+
+      }
+
+    } else {
+
+      img.addEventListener("load", refresh);
+
+    }
+
+  });
+
 
   if (window.ResizeObserver) {
 
-    var wrap = document.querySelector('.wrap');
+    const wrap = document.querySelector(".wrap");
 
     if (wrap) {
 
-      new ResizeObserver(function(){
-        sendHeight();
+      new ResizeObserver(() => {
+
+        refresh();
+
       }).observe(wrap);
 
     }
 
   }
 
-  setTimeout(sendHeight, 300);
-  setTimeout(sendHeight, 1000);
-  setTimeout(sendHeight, 2000);
+
+  setTimeout(refresh, 300);
+  setTimeout(refresh, 1000);
+  setTimeout(refresh, 2000);
 
 })();
 
