@@ -28,9 +28,9 @@
   header h1{font-family:'e-Ukraine Head','e-Ukraine',sans-serif;font-size:clamp(30px,4.6vw,62px);font-weight:700;letter-spacing:-.01em;line-height:1.06;max-width:none}
   header .h2-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
   header h2{font-weight:400;font-size:clamp(16px,1.6vw,20px);color:var(--muted)}
-  .galika-logo{display:inline-flex;align-items:center;gap:9px;padding:8px 16px 8px 12px;border-radius:9px;background:var(--rus);color:var(--ink);font-family:'e-Ukraine Head','e-Ukraine',sans-serif;font-weight:700;font-size:clamp(18px,2vw,24px);line-height:1;white-space:nowrap}
-  .galika-logo svg{width:22px;height:22px;flex:0 0 auto}
-  .galika-logo .sub{font-weight:400;opacity:.85;font-size:0.62em;margin-left:1px}
+  .galika-logo{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 9px;border-radius:7px;background:var(--rus);color:#fff;font-family:'e-Ukraine Head','e-Ukraine',sans-serif;font-weight:700;font-size:14px;line-height:1;white-space:nowrap}
+  .galika-logo svg{width:15px;height:15px;flex:0 0 auto}
+  .galika-logo .sub{font-weight:400;opacity:.85;font-size:11.5px;margin-left:1px}
 
   .cols{display:grid;grid-template-columns:minmax(258px,.95fr) 32px minmax(300px,1.06fr);gap:12px}
 
@@ -45,8 +45,8 @@
   .m{background:var(--blue);border-radius:14px;padding:18px 24px 18px 18px;display:flex;align-items:center;gap:24px;min-width:0;flex:1;color:#fff}
   /* Identical media-column width on both blue and red cards */
   .m .photo,.p .logo{flex:0 0 262px;width:262px;min-width:262px}
-  .m .photo{height:162px;display:flex;align-items:center;justify-content:flex-start}
-  .m .photo img{max-width:100%;max-height:100%;object-fit:contain;object-position:left center}
+  .m .photo{height:162px;display:flex;align-items:center;justify-content:center}
+  .m .photo img{max-width:100%;max-height:100%;object-fit:contain;object-position:center center}
 /* Kaluga Turbine Plant: make the machine photos visually larger while keeping
    the same media-column width and the left edge alignment. */
 .m.kaluga .photo{
@@ -76,8 +76,9 @@
   .arrow svg{width:22px;height:22px;stroke:currentColor;fill:none}
 
   .p{background:var(--p-bg);border-left:6px solid var(--rus);border-radius:0 12px 12px 0;padding:16px 24px 16px 18px;display:flex;align-items:center;gap:24px;min-width:0}
-  .p .logo{order:1;height:112px;display:flex;align-items:center;justify-content:flex-start}
-  .p .logo img{max-width:100%;max-height:100%;object-fit:contain;object-position:left center}
+  .p .logo{order:1;height:112px;display:flex;align-items:center;justify-content:center}
+  .p .logo img{max-width:100%;max-height:100%;object-fit:contain;object-position:center center}
+  .p.kaluga .logo{width:360px;flex:0 0 360px;min-width:360px;height:230px}
   .p .txt{order:2;flex:1 1 auto;min-width:0}
   .p .nm{font-weight:700;font-size:20px;color:var(--rus);line-height:1.25}
   .p .pr{font-size:15.5px;color:var(--dark);line-height:1.5;margin-top:9px}
@@ -108,6 +109,7 @@
     .m .geo{margin-top:14px}
     .p{gap:16px;padding:14px 16px 14px 12px}
     .p .logo{height:86px}
+    .p.kaluga .logo{width:280px;flex:0 0 280px;min-width:280px;height:180px}
     .p .nm{font-size:17.5px}
     .p .pr{font-size:14px;margin-top:7px}
   }
@@ -123,6 +125,7 @@
     .m .cn{font-size:13px}
     .p{gap:12px;padding:12px}
     .p .logo{height:62px}
+    .p.kaluga .logo{width:190px;flex:0 0 190px;min-width:190px;height:125px}
     .p .nm{font-size:15.5px}
     .p .pr{font-size:13px;margin-top:6px}
     .p .cnt{font-size:11.5px;margin-top:6px}
@@ -143,6 +146,7 @@
     .m .cn{font-size:11.5px}
     .p{gap:10px;padding:10px 10px 10px 8px;border-left-width:5px}
     .p .logo{height:48px}
+    .p.kaluga .logo{width:145px;flex:0 0 145px;min-width:145px;height:95px}
     .p .nm{font-size:13.5px}
     .p .pr{font-size:11.5px;margin-top:5px;line-height:1.4}
     .p .cnt{font-size:10px;margin-top:5px}
@@ -168,6 +172,7 @@
     .m .cn{font-size:13px}
     .p{gap:14px;padding:14px 14px 14px 12px}
     .p .logo{height:62px}
+    .p.kaluga .logo{width:190px;flex:0 0 190px;min-width:190px;height:125px}
     .p .nm{font-size:16px}
     .p .pr{font-size:13.5px;margin-top:6px}
     .p .cnt{font-size:11.5px}
@@ -179,6 +184,7 @@
     .m .photo{height:76px}
     .m .nm{font-size:15.5px}
     .p .logo{height:54px}
+    .p.kaluga .logo{width:165px;flex:0 0 165px;min-width:165px;height:105px}
     .p .nm{font-size:15px}
   }
 </style>
@@ -286,7 +292,7 @@ GROUPS.forEach(g=>{
   el.innerHTML=
     '<div class="stack">'+stack+'</div>'+
     '<div class="arrow"><svg><use href="#ic-arrow"/></svg></div>'+
-    '<div class="p">'+
+    '<div class="p'+(g.name==="Kaluga Turbine Plant"?' kaluga':'')+'">'+
       '<div class="logo"><img src="'+g.logo+'" alt="'+g.name+'"></div>'+
       '<div class="txt"><div class="nm">'+g.name+'</div><div class="pr">'+g.products+'</div>'+count+'</div>'+
     '</div>';
