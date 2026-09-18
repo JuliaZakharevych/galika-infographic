@@ -72,10 +72,12 @@
 
   footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--hair)}
   footer p{font-size:13px;color:var(--muted);line-height:1.6}
-  footer{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
-  footer p{order:1}
-  footer .kilogo{order:2;display:block;align-self:flex-end;
-    width:clamp(150px,20vw,260px);height:auto;max-width:100%}
+  footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--hair);
+         display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-end;
+         justify-content:space-between;gap:16px 24px}
+  footer p{flex:1 1 280px;font-size:13px;color:var(--muted);line-height:1.6;text-align:left}
+  footer .kilogo{flex:0 0 auto;display:block;margin-left:auto;
+                 width:clamp(150px,20vw,260px);height:auto;max-width:100%}
 
   .m .nm,.p .nm{overflow-wrap:break-word}
 
@@ -156,7 +158,7 @@
     .p .nm{font-size:16px}
     .p .pr{font-size:13.5px;margin-top:6px}
     .p .cnt{font-size:11.5px}
-    footer .kilogo{width:min(220px,62%)}
+    footer .kilogo{width:min(200px,56%)}
   }
   @media (max-width:420px){
     .m .photo,.p .logo{flex-basis:110px;width:110px;min-width:110px}
@@ -216,7 +218,7 @@ const GROUPS = [
 
  {name:"Arkon High-Precision Machining Center", products:"cutting tools", logo:L.arkon,
   src:"https://drive.google.com/file/d/1ktC3eXhJ1PyXO1fkYO6pKQk1u_fLmzQr/view",
-  machines:[["Walter Vision","de",P.walter_vision,"CNC tool grinding machine"],["Walter Helitronic Basic","de",P.walter_helitronic,"CNC tool grinding machine"]]},
+  machines:[["Walter Vision","de",P.walter_vision,"CNC grinding machine"],["Walter Helitronic Basic","de",P.walter_helitronic,"CNC grinding machine"]]},
 
  {name:"Imperial Tula Arms Factory", products:"anti-tank missile systems, assault rifles, pistols, artillery rounds", logo:L.tula,
   src:"https://war-sanctions.gur.gov.ua/en/components/companies/474",
@@ -244,7 +246,7 @@ const GROUPS = [
 
  {name:"Machine-building Production Association named after I. Rumyantsev", products:"military aircraft components, equipment for armored vehicles", logo:L.rumyantsev,
   src:"https://war-sanctions.gur.gov.ua/en/components/companies/3539",
-  machines:[["Studer S33","ch",P.studer,"CNC universal cylindrical grinding machine"]]},
+  machines:[["Studer S33","ch",P.studer,"CNC grinding machine"]]},
 
  {name:"Krasny Oktyabr", products:"power units for military aircraft", logo:L.krasny,
   src:"https://war-sanctions.gur.gov.ua/en/components/companies/680",
