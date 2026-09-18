@@ -32,7 +32,7 @@
   header .rule{height:4px;width:64px;background:var(--blue);margin-bottom:14px;border-radius:2px}
   header h1{font-family:'e-Ukraine Head','e-Ukraine',sans-serif;font-size:clamp(28px,3.6vw,44px);
             font-weight:700;letter-spacing:-.01em;line-height:1.08}
-  header h2{font-weight:400;font-size:clamp(16px,1.6vw,20px);color:var(--muted);margin-top:10px;max-width:70ch}
+  header h2{font-weight:400;font-size:clamp(16px,1.6vw,20px);color:var(--ink);margin-top:10px;max-width:70ch}
 
   .legend{display:flex;align-items:center;flex-wrap:wrap;gap:26px;
           padding-bottom:16px;margin-bottom:28px;border-bottom:2px solid var(--hair)}
@@ -83,9 +83,10 @@
 
   /* ===== footer ===== */
   footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--hair);
-         display:flex;flex-direction:column;align-items:flex-end;gap:14px}
-  footer p{order:1;font-size:13px;color:var(--muted);line-height:1.6}
-  footer .kilogo{order:2;display:block;align-self:flex-end;
+         display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-end;
+         justify-content:space-between;gap:16px 24px}
+  footer p{flex:1 1 280px;font-size:13px;color:var(--muted);line-height:1.6;text-align:left}
+  footer .kilogo{flex:0 0 auto;display:block;margin-left:auto;
                  width:clamp(150px,20vw,260px);height:auto;max-width:100%}
 
   @media (max-width:900px){
@@ -109,7 +110,7 @@
     .company-card{min-height:0;gap:8px;padding:12px 13px;border-radius:0 10px 10px 0}
     .company-name{font-size:14px}
     .status{font-size:12px;margin-top:6px}
-    footer .kilogo{width:min(220px,62%)}
+    footer .kilogo{width:min(200px,56%)}
   }
 </style>
 </head>
