@@ -71,9 +71,10 @@
 
   /* ===== footer — same as the machinery infographic ===== */
   footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--hair);
-         display:flex;flex-direction:column;align-items:flex-end;gap:14px}
-  footer p{order:1;font-size:13px;color:var(--muted);line-height:1.6}
-  footer .kilogo{order:2;display:block;align-self:flex-end;
+         display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-end;
+         justify-content:space-between;gap:16px 24px}
+  footer p{flex:1 1 280px;font-size:13px;color:var(--muted);line-height:1.6;text-align:left}
+  footer .kilogo{flex:0 0 auto;display:block;margin-left:auto;
                  width:clamp(150px,20vw,260px);height:auto;max-width:100%}
 
   @media (max-width:900px){
@@ -95,7 +96,7 @@
     .group-title{font-size:17px}
     .group-contact{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
     .pill{font-size:11.5px;padding:7px 11px}
-    footer .kilogo{width:min(220px,62%)}
+    footer .kilogo{width:min(200px,56%)}
   }
 </style>
 </head>
