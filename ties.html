@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galika AG — corporate ties in Russia</title>
+<style>
+  /* same fonts as the other two graphics — .woff2 files sit next to this page */
+  @font-face{font-family:'e-Ukraine';src:url('e-Ukraine-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:'e-Ukraine';src:url('e-Ukraine-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'e-Ukraine';src:url('e-Ukraine-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:'e-Ukraine Head';src:url('e-UkraineHead-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+  /* same tokens as the other two graphics */
+  :root{
+    --ink:#111; --muted:#6B7280; --hair:#E4E4E4; --dark:#4A4741;
+    --blue:#0B3CEA; --m-bg:#EEF2FD;
+    --rus:#A0141E;  --p-bg:#FDEFEE;
+    --dot-dissolved:#8A8880;
+    --dot-bankrupt:#A0141E;
+    --dot-active:#2E9E4F;
+    --flag-w:40px; --flag-h:27px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#fff;overflow-x:hidden}
+  body{font-family:'e-Ukraine',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+       color:var(--ink);-webkit-font-smoothing:antialiased;padding:40px 40px 52px}
+  .wrap{max-width:1080px;margin:0 auto}
+
+  /* ===== header ===== */
+  header{margin-bottom:20px}
+  header .rule{height:4px;width:64px;background:var(--blue);margin-bottom:14px;border-radius:2px}
+  header h1{font-family:'e-Ukraine Head','e-Ukraine',sans-serif;font-size:clamp(28px,3.6vw,44px);
+            font-weight:700;letter-spacing:-.01em;line-height:1.08}
+  header h2{font-weight:400;font-size:clamp(16px,1.6vw,20px);color:var(--muted);margin-top:10px;max-width:70ch}
+
+  .legend{display:flex;align-items:center;flex-wrap:wrap;gap:26px;
+          padding-bottom:16px;margin-bottom:28px;border-bottom:2px solid var(--hair)}
+  .legend-item{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:14px}
+  .legend-line{width:36px;height:0}
+  .legend-line.solid{border-top:3px solid var(--blue)}
+  .legend-line.dashed{border-top:3px dashed var(--muted)}
+
+  /* ===== parent (Swiss) ===== */
+  .parent{display:flex;align-items:center;gap:16px;background:var(--m-bg);border-radius:12px;
+          padding:18px;width:470px;max-width:100%;margin:0 auto;position:relative;z-index:2}
+  .parent-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;overflow-wrap:break-word}
+  .parent-name{font-size:21px;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+  .parent-meta{color:var(--dark);font-size:13.5px;line-height:1.35;opacity:.85}
+  .parent-photo{width:92px;height:92px;flex:none;border-radius:10px;background:#DDE3F5;overflow:hidden}
+  .parent-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+
+  .swiss-flag{position:relative;width:var(--flag-w);height:var(--flag-h);flex:none;background:#D52B1E;
+              border-radius:3px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  .swiss-flag::before,.swiss-flag::after{content:"";position:absolute;background:#fff;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .swiss-flag::before{width:calc(var(--flag-h)*.1875);height:calc(var(--flag-h)*.625)}
+  .swiss-flag::after{width:calc(var(--flag-h)*.625);height:calc(var(--flag-h)*.1875)}
+
+  .flag-ru{width:var(--flag-w);height:var(--flag-h);flex:none;border-radius:3px;overflow:hidden;
+           box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);
+           background:linear-gradient(to bottom,#fff 0 33.4%,#0039A6 33.3% 66.7%,#D52B1E 66.6% 100%)}
+
+  /* ===== connector ===== */
+  .connector{position:relative;width:100%;height:68px}
+  .connector svg{position:absolute;top:0;left:0;width:100%;height:100px;overflow:visible}
+
+  /* ===== groups ===== */
+  .groups{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:start;gap:20px}
+  .group-label{display:inline-flex;align-items:center;margin:0 0 12px;padding:8px 13px;border-radius:7px;
+               background:var(--m-bg);color:var(--blue);font-size:13px;font-weight:700;
+               letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+  .direct-group,.indirect-group{text-align:center}
+  .indirect-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left}
+
+  .company-card{background:var(--p-bg);border-left:6px solid var(--rus);border-radius:0 12px 12px 0;
+                padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;
+                min-height:112px;min-width:0;text-align:left;overflow-wrap:break-word}
+  .company-name{font-size:15px;font-weight:700;line-height:1.3;color:var(--rus)}
+  .status{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12.5px;line-height:1.3;color:var(--dark)}
+  .status-dot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--dot-bankrupt)}
+  .status.dissolved .status-dot{background:var(--dot-dissolved)}
+  .status.active .status-dot{background:var(--dot-active)}
+
+  /* ===== footer ===== */
+  footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--hair);
+         display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+  footer p{order:1;font-size:13px;color:var(--muted);line-height:1.6}
+  footer .kilogo{order:2;display:block;align-self:flex-end;
+                 width:clamp(150px,20vw,260px);height:auto;max-width:100%}
+
+  @media (max-width:900px){
+    body{padding:28px 20px 40px}
+    .groups{gap:14px}
+    .indirect-cards{gap:10px}
+    .company-card{padding:12px 13px;min-height:100px}
+    .company-name{font-size:14px}
+  }
+  @media (max-width:640px){
+    body{padding:20px 14px 30px}
+    .legend{display:none}
+    .parent{width:100%;gap:12px;padding:16px}
+    .parent-name{font-size:18px}
+    .parent-photo{width:84px;height:84px;margin-left:auto}
+    .connector{display:none}
+    .groups{grid-template-columns:minmax(0,1fr);gap:0}
+    .direct-group .group-label,.indirect-group .group-label{margin-top:16px;margin-bottom:10px;
+      font-size:11.5px;padding:6px 10px}
+    .indirect-cards{grid-template-columns:minmax(0,1fr);gap:8px}
+    .company-card{min-height:0;gap:8px;padding:12px 13px;border-radius:0 10px 10px 0}
+    .company-name{font-size:14px}
+    .status{font-size:12px;margin-top:6px}
+    footer .kilogo{width:min(220px,62%)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="rule"></div>
+    <h1>Galika AG's corporate ties in Russia</h1>
+    <h2>Five are dissolved or bankrupt; one is in bankruptcy proceedings; one remains active.</h2>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-line solid"></span>Directly founded representative office</div>
+    <div class="legend-item"><span class="legend-line dashed"></span>Indirect connection</div>
+  </div>
+
+  <div class="parent">
+    <span class="swiss-flag" aria-hidden="true"></span>
+    <div class="parent-info">
+      <div class="parent-name">Galika AG</div>
+      <div class="parent-meta">Switzerland &middot; machine-tool supplier</div>
+    </div>
+    <div class="parent-photo">
+      <img src="galika_photo.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="connector">
+    <svg viewBox="0 0 1000 70" preserveAspectRatio="none">
+      <defs>
+        <marker id="arrowSolid" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0.5 0.5 L 7 4 L 0.5 7.5 z" fill="#0B3CEA"></path>
+        </marker>
+        <marker id="arrowDashed" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0.5 0.5 L 7 4 L 0.5 7.5 z" fill="#6B7280"></path>
+        </marker>
+      </defs>
+      <path d="M 500 0 L 500 18" stroke="#0B3CEA" stroke-width="2.4" fill="none"
+            stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+      <path d="M 500 18 L 170 18 L 170 48" stroke="#0B3CEA" stroke-width="2.4" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"
+            marker-end="url(#arrowSolid)"></path>
+      <path d="M 500 18 L 670 18 L 670 48" stroke="#6B7280" stroke-width="2.2" stroke-dasharray="6 6" fill="none"
+            stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"
+            marker-end="url(#arrowDashed)"></path>
+    </svg>
+  </div>
+
+  <div class="groups">
+
+    <div class="direct-group">
+      <div class="group-label">Direct representative office</div>
+      <div class="company-card">
+        <div class="flag-ru"></div>
+        <div>
+          <div class="company-name">Galika, JSC, representative office of Swiss Galika AG</div>
+          <div class="status dissolved"><span class="status-dot"></span>dissolved</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indirect-group">
+      <div class="group-label">Indirect connections</div>
+      <div class="indirect-cards">
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">Galika-Service, LLC</div>
+            <div class="status"><span class="status-dot"></span>bankrupt since Aug.&nbsp;28,&nbsp;2026</div>
+          </div>
+        </div>
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">GLK, LLC</div>
+            <div class="status"><span class="status-dot"></span>bankruptcy proceedings since Aug.&nbsp;10,&nbsp;2026</div>
+          </div>
+        </div>
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">Galika-SKD, LLC</div>
+            <div class="status"><span class="status-dot"></span>bankrupt since Jan.&nbsp;30,&nbsp;2025</div>
+          </div>
+        </div>
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">Galika-TsTS, LLC</div>
+            <div class="status"><span class="status-dot"></span>bankrupt since Sept.&nbsp;3,&nbsp;2023</div>
+          </div>
+        </div>
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">Galika-Met, LLC</div>
+            <div class="status"><span class="status-dot"></span>bankrupt since Aug.&nbsp;4,&nbsp;2025</div>
+          </div>
+        </div>
+
+        <div class="company-card">
+          <div class="flag-ru"></div>
+          <div>
+            <div class="company-name">Maunder, LLC</div>
+            <div class="status active"><span class="status-dot"></span>active</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Source: The Kyiv Independent's research, based on the Russian company registry.</p>
+    <img class="kilogo" src="logo_ki.jpg" alt="The Kyiv Independent">
+  </footer>
+
+</div>
+
+<script>
+/* tell the parent page how tall we are, so the iframe can resize itself */
+function postHeight(){
+  var h=Math.ceil(document.documentElement.getBoundingClientRect().height);
+  parent.postMessage({galikaTiesHeight:h}, "*");
+}
+window.addEventListener("load", postHeight);
+window.addEventListener("resize", postHeight);
+if (window.ResizeObserver) new ResizeObserver(postHeight).observe(document.body);
+</script>
+</body>
+</html>
